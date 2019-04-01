@@ -7,7 +7,8 @@ namespace SolidVehicles
     
         public class Cessna : IVehicle, IFly
         {
-            // Below are auto-implemented property because they have values
+        // Below are auto-implemented property because they have values
+            public string Name { get; set; } = "Cessna";
             public int Wheels { get; set; } = 3;
             public int Doors { get; set; } = 3;
             public int PassengerCapacity { get; set; } = 113;
@@ -19,6 +20,7 @@ namespace SolidVehicles
 
         public Cessna()
         {
+            Name = Name;
             Wheels = Wheels;
             Doors = Doors;
             PassengerCapacity = PassengerCapacity;

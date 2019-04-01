@@ -7,6 +7,7 @@ namespace SolidVehicles
     public class Piper : IVehicle, IFly
     {
         // Below are auto-implemented property because they have values
+        public string Name { get; set; } = "Piper";
         public int Wheels { get; set; } = 3;
         public int Doors { get; set; } = 2;
         public int PassengerCapacity { get; set; } = 44;
@@ -18,6 +19,7 @@ namespace SolidVehicles
 
         public Piper()
         {
+            Name = Name;
             Wheels = Wheels;
             Doors = Doors;
             PassengerCapacity = PassengerCapacity;

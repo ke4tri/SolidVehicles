@@ -6,6 +6,7 @@ namespace SolidVehicles
 {
     public class Boat : IVehicle, IJetSki
     {
+        public string Name { get; set; } = "Boat";
         public int PassengerCapacity { get; set; } = 2;
         public bool Winged { get; set; } = false;
         public string TransmissionType { get; set; } = "Automatic";
