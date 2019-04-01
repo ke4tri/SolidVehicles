@@ -46,20 +46,20 @@ public class Program
 {
     public static void Main()
     {
-        var newPlane = new Piper { };
-        var newerPlane = new Cessna { };
+        var newPlane = new Piper();
+        var newerPlane = new Cessna();
         //var FlyVehiclesDictionary = new Dictionary<string, List<string>> { };
         //FlyVehiclesDictionary.Add("Piper", newPlane);
 
         // Build a collection of all vehicles that fly
-        List<string> FlyVehicles = new List<string>() {};
+        List<IFly> FlyVehicles = new List<IFly>() {};
 
-        FlyVehicles.Add(newPlane.ToString());
-        FlyVehicles.Add(newerPlane.ToString());
+        FlyVehicles.Add(newPlane);
+        FlyVehicles.Add(newerPlane);
         // With a single `foreach`, have each vehicle Fly()
-        foreach (var plane in FlyVehicles)
+        foreach (IFly plane in FlyVehicles)
         {
-            Console.WriteLine(plane);
+            Console.WriteLine(plane.Doors);
             Console.ReadLine();
         }
 
