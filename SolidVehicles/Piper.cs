@@ -8,6 +8,7 @@ namespace SolidVehicles
     {
         // Below are auto-implemented property because they have values
         public string Name { get; set; } = "Piper";
+        public string Type { get; set; } = "Plane";
         public int Wheels { get; set; } = 3;
         public int Doors { get; set; } = 2;
         public int PassengerCapacity { get; set; } = 44;
@@ -17,17 +18,17 @@ namespace SolidVehicles
 
         public double MaxAirSpeed { get; set; } = 104.0;
 
-        public Piper()
-        {
-            Name = Name;
-            Wheels = Wheels;
-            Doors = Doors;
-            PassengerCapacity = PassengerCapacity;
-            Winged = Winged;
-            TransmissionType = TransmissionType;
-            EngineVolume = EngineVolume;
-            MaxAirSpeed = MaxAirSpeed;
-        }
+        //public Piper()
+        //{
+        //    Name = Name;
+        //    Wheels = Wheels;
+        //    Doors = Doors;
+        //    PassengerCapacity = PassengerCapacity;
+        //    Winged = Winged;
+        //    TransmissionType = TransmissionType;
+        //    EngineVolume = EngineVolume;
+        //    MaxAirSpeed = MaxAirSpeed;
+        //}
 
         public void Fly()
         {

@@ -9,6 +9,7 @@ namespace SolidVehicles
         {
         // Below are auto-implemented property because they have values
             public string Name { get; set; } = "Cessna";
+            public string Type { get; set; } = "Plane";
             public int Wheels { get; set; } = 3;
             public int Doors { get; set; } = 3;
             public int PassengerCapacity { get; set; } = 113;
@@ -18,17 +19,17 @@ namespace SolidVehicles
             public double MaxAirSpeed { get; set; } = 309.0;
 
 
-        public Cessna()
-        {
-            Name = Name;
-            Wheels = Wheels;
-            Doors = Doors;
-            PassengerCapacity = PassengerCapacity;
-            Winged = Winged;
-            TransmissionType = TransmissionType;
-            EngineVolume = EngineVolume;
-            MaxAirSpeed = MaxAirSpeed;
-        }
+        //public Cessna()
+        //{
+        //    Name = Name;
+        //    Wheels = Wheels;
+        //    Doors = Doors;
+        //    PassengerCapacity = PassengerCapacity;
+        //    Winged = Winged;
+        //    TransmissionType = TransmissionType;
+        //    EngineVolume = EngineVolume;
+        //    MaxAirSpeed = MaxAirSpeed;
+        //}
 
 
             public void Fly()

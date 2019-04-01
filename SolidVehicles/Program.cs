@@ -7,6 +7,7 @@ using SolidVehicles;
 public interface IVehicle
 {
     string Name { get; set; }
+    string Type { get; set; }
     int PassengerCapacity { get; set; }
     bool Winged { get; set; }
     string TransmissionType { get; set; }
@@ -50,6 +51,29 @@ public class Program
 {
     public static void Main()
     {
+
+        //Collection of all vehicles
+        List<IVehicle> Vehicles = new List<IVehicle>() { };
+        Vehicles.Add(new Piper());
+        Vehicles.Add(new Cessna());
+        Vehicles.Add(new Boat());
+        Vehicles.Add(new JetSki());
+        Vehicles.Add(new Motorcycle());
+        Vehicles.Add(new Car());
+
+        Console.WriteLine("These are the all vehicles: ");
+        Console.WriteLine("-------------------------------------- ");
+
+
+        foreach (IVehicle vehicle in Vehicles)
+        {
+            Console.WriteLine($"Name of vehicle : {vehicle.Name}");
+            Console.WriteLine($"Name of vehicle : {vehicle.Type}");
+
+            Console.WriteLine($"Passenger Capacity : {vehicle.PassengerCapacity}");
+            Console.WriteLine($"Engine Volume : {vehicle.EngineVolume}");
+            Console.WriteLine(" ");
+        }
         //var newPlane = new Piper();
         //var newerPlane = new Cessna();
         //var FlyVehiclesDictionary = new Dictionary<string, List<string>> { };
@@ -59,6 +83,9 @@ public class Program
         List<IFly> FlyVehicles = new List<IFly>() {};
         FlyVehicles.Add(new Piper());
         FlyVehicles.Add(new Cessna());
+
+        Console.WriteLine("-------------------------------------- ");
+
 
         Console.WriteLine("These are the vehicles that fly: ");
         // With a single `foreach`, have each vehicle Fly()
@@ -77,6 +104,8 @@ public class Program
         RoadVehicles.Add(new Car());
         RoadVehicles.Add(new Motorcycle());
         // With a single `foreach`, have each road vehicle Drive()
+        Console.WriteLine("-------------------------------------- ");
+
         Console.WriteLine("These are the vehicles that are for land: ");
         foreach (IVehicle road in RoadVehicles)
         {
@@ -88,8 +117,21 @@ public class Program
 
 
         // Build a collection of all vehicles that operate on water
-
+        List<IJetSki> WaterVehicles = new List<IJetSki>() { };
+        WaterVehicles.Add(new JetSki());
+        WaterVehicles.Add(new Boat());
         // With a single `foreach`, have each water vehicle Drive()
+        Console.WriteLine("-------------------------------------- ");
+
+        Console.WriteLine("These are the vehicles that are for Water: ");
+        foreach (IVehicle road in WaterVehicles)
+        {
+            Console.WriteLine($"Name of Aircraft : {road.Name}");
+            Console.WriteLine($"Passenger Capacity : {road.PassengerCapacity}");
+            Console.WriteLine($"Engine Volume : {road.EngineVolume}");
+            Console.WriteLine(" ");
+        }
+
         Console.ReadLine();
 
     }

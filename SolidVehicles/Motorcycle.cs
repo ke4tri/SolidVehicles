@@ -7,6 +7,8 @@ namespace SolidVehicles
     public class Motorcycle : IVehicle, ILand
     {
         public string Name { get; set; } = "Motorcycle";
+        public string Type { get; set; } = "Land";
+
         public int Wheels { get; set; } = 2;
         public int Doors { get; set; } = 0;
         public int PassengerCapacity { get; set; }

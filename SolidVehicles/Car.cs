@@ -7,6 +7,8 @@ namespace SolidVehicles
     public class Car : IVehicle, ILand
     {
         public string Name { get; set; } = "Car";
+        public string Type { get; set; } = "Land";
+
         public int Wheels { get; set; } = 4;
         public int Doors { get; set; } = 4;
         public int PassengerCapacity { get; set; }

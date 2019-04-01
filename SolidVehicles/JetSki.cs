@@ -7,6 +7,7 @@ namespace SolidVehicles
     public class JetSki : IVehicle, IJetSki
     {
         public string Name { get; set; } = "JetSki";
+        public string Type { get; set; } = "Water";
         public int PassengerCapacity { get; set; } = 2;
         public bool Winged { get; set; } = false;
         public string TransmissionType { get; set; } = "Automatic";
