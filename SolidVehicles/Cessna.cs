@@ -14,8 +14,20 @@ namespace SolidVehicles
             public bool Winged { get; set; } = true;
             public string TransmissionType { get; set; } = "None";
             public double EngineVolume { get; set; } = 31.1;
-           
             public double MaxAirSpeed { get; set; } = 309.0;
+
+
+        public Cessna()
+        {
+            Wheels = Wheels;
+            Doors = Doors;
+            PassengerCapacity = PassengerCapacity;
+            Winged = Winged;
+            TransmissionType = TransmissionType;
+            EngineVolume = EngineVolume;
+            MaxAirSpeed = MaxAirSpeed;
+        }
+
 
             public void Fly()
             {

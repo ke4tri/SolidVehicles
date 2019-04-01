@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Collections.Generic;
+using SolidVehicles;
 
 // IVehicle will be all things that ALL vehicles have in common
 public interface IVehicle
@@ -41,43 +42,29 @@ public interface IFly
 
 
 
-
-
 public class Program
 {
     public static void Main()
     {
+        var newPlane = new Piper { };
+        var newerPlane = new Cessna { };
+        //var FlyVehiclesDictionary = new Dictionary<string, List<string>> { };
+        //FlyVehiclesDictionary.Add("Piper", newPlane);
 
         // Build a collection of all vehicles that fly
-        List<IVehicle> FlyVehicles = new List<IVehicle>(){
-           new SolidVehicles.Piper(),
-           new SolidVehicles.Cessna
-           {
-               Wheels = 2,
-               Doors= 2,
-               PassengerCapacity = 88,
-               Winged  = true,
-               TransmissionType = "None",
-               EngineVolume  = 31.1,
-               MaxAirSpeed  = 100.0,
-           }
+        List<string> FlyVehicles = new List<string>() {};
 
-        };
-
+        FlyVehicles.Add(newPlane.ToString());
+        FlyVehicles.Add(newerPlane.ToString());
         // With a single `foreach`, have each vehicle Fly()
-        foreach (var plane in FlyVehicles) {
+        foreach (var plane in FlyVehicles)
+        {
             Console.WriteLine(plane);
+            Console.ReadLine();
         }
 
-        var newPlane = new SolidVehicles.Cessna();
-        Console.WriteLine(newPlane.ToString());
         Console.ReadLine();
         
-
-
-        
-
-
         // Build a collection of all vehicles that operate on roads
 
         // With a single `foreach`, have each road vehicle Drive()
