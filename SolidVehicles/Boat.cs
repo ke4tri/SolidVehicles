@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SolidVehicles
 {
-    public class Boat : IVehicle, IJetSki
+    public class Boat : IWaterVehicle
     {
         public string Name { get; set; } = "Boat";
         public string Type { get; set; } = "Water";

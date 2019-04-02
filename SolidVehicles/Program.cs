@@ -18,8 +18,7 @@ public interface IVehicle
 }
 
 
-
-public interface IJetSki
+public interface IWaterVehicle : IVehicle
 {
     string Name { get; set; }
     double MaxWaterSpeed { get; set; }
@@ -32,6 +31,7 @@ public interface ILand
     int Doors { get; set; }
     double MaxLandSpeed { get; set; }
     double EngineVolume { get; set; }
+
     void Drive();
 }
 
@@ -44,7 +44,6 @@ public interface IFly
 
     void Fly();
 }
-
 
 
 public class Program
@@ -62,7 +61,6 @@ public class Program
         Vehicles.Add(new Car());
 
         Console.WriteLine("These are the all vehicles: ");
-
         Console.WriteLine("-------------------------------------- ");
 
         foreach (IVehicle vehicle in Vehicles)
@@ -73,7 +71,6 @@ public class Program
             Console.WriteLine($"Engine Volume : {vehicle.EngineVolume}");
             Console.WriteLine(" ");
         }
-        
 
         // Build a collection of all vehicles that fly
         List<IFly> FlyVehicles = new List<IFly>();
@@ -91,8 +88,6 @@ public class Program
             Console.WriteLine($"Engine Volume : {plane.EngineVolume}");
             Console.WriteLine(" ");
         }
-
-
 
         // Build a collection of all vehicles that operate on roads
         List<ILand> RoadVehicles = new List<ILand>();
@@ -112,7 +107,7 @@ public class Program
 
 
         // Build a collection of all vehicles that operate on water
-        List<IJetSki> WaterVehicles = new List<IJetSki>() { };
+        List<IWaterVehicle> WaterVehicles = new List<IWaterVehicle>() { };
         //IEnumerable<JetSki> jetSkin = new IEnumerable<JetSki>();
         WaterVehicles.Add(new JetSki()
         { /* 
@@ -127,11 +122,11 @@ public class Program
         Console.WriteLine("-------------------------------------- ");
 
         Console.WriteLine("These are the vehicles that are for Water: ");
-        foreach (IVehicle road in WaterVehicles)
+        foreach (var waterVehicle in WaterVehicles)
         {
-            Console.WriteLine($"Name of Aircraft : {road.Name}");
-            Console.WriteLine($"Passenger Capacity : {road.PassengerCapacity}");
-            Console.WriteLine($"Engine Volume : {road.EngineVolume}");
+            Console.WriteLine($"Name of Aircraft : {waterVehicle.Name}");
+            Console.WriteLine($"Passenger Capacity : {waterVehicle.PassengerCapacity}");
+            Console.WriteLine($"Engine Volume : {waterVehicle.EngineVolume}");
             Console.WriteLine($" ");
         }
 
